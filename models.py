@@ -45,8 +45,8 @@ class NearEarthObject:
         # handle any edge cases, such as a empty name being represented by `None`
         # and a missing diameter being represented by `float('nan')`.
         self.designation = designation
-        self.name = name
-        self.diameter = float(diameter)
+        self.name = None if name == '' else name
+        self.diameter = float('nan') if diameter == '' else float(diameter)
         self.hazardous = hazardous 
         # Create an empty initial collection of linked approaches.
         self.approaches = []
@@ -126,7 +126,7 @@ class CloseApproach():
         # TODO: Use this object's attributes to return a human-readable string representation.
         # The project instructions include one possibility. Peek at the __repr__
         # method for examples of advanced string formatting.
-        return f"On {self.time_str}, '{self._designation}' approaches Earth at a distance of {self.distance:.2f} au and a velocity of {self.velocity:.2f} km/s"
+        return f"On {self.time_str}, '{NearEarthObject(self.neo).full_name}' approaches Earth at a distance of {self.distance:.2f} au and a velocity of {self.velocity:.2f} km/s"
 
     def __repr__(self):
         """Return `repr(self)`, a computer-readable string representation of this object."""
