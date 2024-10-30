@@ -63,7 +63,8 @@ class NearEarthObject:
         # The project instructions include one possibility. Peek at the __repr__
         # method for examples of advanced string formatting.
         str_hazardous = "is" if self.hazardous else "is not"
-        return f"NEO {self.fullname} has a diameter of {self.diameter:.3f} km and {str_hazardous} potentially hazardous."
+        return f"NEO {self.fullname} has a diameter of {self.diameter:.3f} km " \
+               f"and {str_hazardous} potentially hazardous."
 
     def __repr__(self):
         """Return `repr(self)`, a computer-readable string representation of this object."""
@@ -126,7 +127,8 @@ class CloseApproach():
         # TODO: Use this object's attributes to return a human-readable string representation.
         # The project instructions include one possibility. Peek at the __repr__
         # method for examples of advanced string formatting.
-        return f"On {self.time_str}, '{NearEarthObject(self.neo).full_name}' approaches Earth at a distance of {self.distance:.2f} au and a velocity of {self.velocity:.2f} km/s"
+        return f"On {self.time_str}, '{NearEarthObject(self.neo).full_name}' approaches " \
+               f"Earth at a distance of {self.distance:.2f} au and a velocity of {self.velocity:.2f} km/s"
 
     def __repr__(self):
         """Return `repr(self)`, a computer-readable string representation of this object."""
